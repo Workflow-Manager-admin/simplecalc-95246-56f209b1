@@ -93,12 +93,44 @@
   }
 }
 
-/* Responsive design for mobile */
-@media (max-width: 768px) {
-  .theme-toggle {
-    top: 10px;
-    right: 10px;
-    padding: 8px 16px;
-    font-size: 12px;
+/********** Calculator Custom Minimalistic Light Style **********/
+:root {
+  --calc-primary: #1976D2;
+  --calc-secondary: #1565C0;
+  --calc-accent: #FFEB3B;
+}
+[data-theme="light"] {
+  --calc-primary: #1976D2;
+  --calc-secondary: #1565C0;
+  --calc-accent: #FFEB3B;
+}
+/* Remove outline on buttons for cleaner feel, keep accessible on focus */
+button:focus {
+  outline: 2px solid var(--calc-accent);
+  outline-offset: 2px;
+}
+button:active {
+  filter: brightness(0.95);
+}
+
+[data-testid^="btn-"] {
+  user-select: none;
+}
+
+@media (max-width: 340px) {
+  [data-testid="calculator-panel"] {
+    min-width: 0 !important;
+    max-width: 98vw !important;
+    padding-left: 0.3rem !important;
+    padding-right: 0.3rem !important;
+  }
+}
+
+@media (max-width: 500px) {
+  [data-testid="calculator-panel"] {
+    min-width: 0 !important;
+    max-width: 100vw !important;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
   }
 }
